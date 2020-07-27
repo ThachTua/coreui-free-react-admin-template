@@ -5,7 +5,7 @@ import { Paper, FormControlLabel, Switch } from "@material-ui/core";
 import { CSidebarNav } from "@coreui/react";
 
 import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
+//import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import OrgStructureTree from "./OrgStructureTree";
 
@@ -54,32 +54,34 @@ const TheSidebar = (props) => {
           labelPlacement="end"
           label="Hiển thị phòng ban ẩn"
         />
-        <Autocomplete
-          elevation={0}
-          disableClearable
-          filterSelectedOptions
-          //ClearOnEscape
-          autoHighlight
-          options={ListOrg}
-          getOptionLabel={(option) =>
-            `${option.Code}-${option.OrgStructureName}`
-          }
-          //getOptionDisabled={(option) => option.....}
-          getOptionSelected={(option, value) => option.ID === value.ID}
-          onChange={(event, item) => {
-            setOrgStructureSelected(item.ID);
-          }}
-          fullWidth
-          size="small"
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Tìm kiếm phòng ban"
-              variant="outlined"
-            />
-          )}
-        />
 
+        {
+          //   <Autocomplete
+          //     elevation={0}
+          //     disableClearable
+          //     filterSelectedOptions
+          //     //ClearOnEscape
+          //     autoHighlight
+          //     options={ListOrg}
+          //     getOptionLabel={(option) =>
+          //       `${option.Code}-${option.OrgStructureName}`
+          //     }
+          //     //getOptionDisabled={(option) => option.....}
+          //     getOptionSelected={(option, value) => option.ID === value.ID}
+          //     onChange={(event, item) => {
+          //       setOrgStructureSelected(item.ID);
+          //     }}
+          //     fullWidth
+          //     size="small"
+          //     renderInput={(params) => (
+          //       <TextField
+          //         {...params}
+          //         label="Tìm kiếm phòng ban"
+          //         variant="outlined"
+          //       />
+          //     )}
+          //   />
+        }
         <OrgStructureTree
           StructureTree={StructureTree}
           OrgStructureSelected={OrgStructureSelected}

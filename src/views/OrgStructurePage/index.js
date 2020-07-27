@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import OrgStructureAPI from "../../callAPI/OrgStructure.api";
 
-import { defaultProfileFields } from "../Staff/utils/fieldsProfile";
-import { exportToPDF } from "../Staff/utils/exportToPDF";
+//import { defaultProfileFields } from "../Staff/utils/fieldsProfile";
+//import { exportToPDF } from "../Staff/utils/exportToPDF";
 
 import { CDataTable, CSidebarNav } from "@coreui/react";
 import Grid from "@material-ui/core/Grid";
@@ -11,9 +11,9 @@ import Paper from "@material-ui/core/Paper";
 
 import Tooltip from "@material-ui/core/Tooltip";
 
-import SaveAltIcon from "@material-ui/icons/SaveAlt";
+//import SaveAltIcon from "@material-ui/icons/SaveAlt";
 
-//import { CSVLink } from "react-csv";
+import { CSVLink } from "react-csv";
 
 import TheSidebar from "./TheSidebar";
 
@@ -66,12 +66,12 @@ const OrgStructurePage = () => {
   };
 
   const exportPDF = () => {
-    exportToPDF(
-      "Danh sach nhan vien",
-      defaultProfileFields,
-      ListProfile,
-      "DSNhanVien"
-    );
+    // exportToPDF(
+    //   "Danh sach nhan vien",
+    //   defaultProfileFields,
+    //   ListProfile,
+    //   "DSNhanVien"
+    // );
     handleCloseExport();
   };
 
@@ -115,7 +115,10 @@ const OrgStructurePage = () => {
           <Paper className={classes.tool}>
             <Tooltip title="Export">
               <IconButton onClick={handleClickExport}>
-                <SaveAltIcon />
+                {
+                  // <SaveAltIcon />
+                }
+                save
               </IconButton>
             </Tooltip>
 
@@ -131,13 +134,14 @@ const OrgStructurePage = () => {
                 }}
               >
                 {
-                  // <CSVLink
-                  //   data={ListProfile}
-                  //   headers={defaultProfileFields}
-                  //   filename={"DSNhanVien.csv"}
-                  // >
-                  // Export as CSV
-                  // </CSVLink>
+                  <CSVLink
+                    data={ListProfile}
+                    //headers={defaultProfileFields}
+                    headers={[]}
+                    filename={"DSNhanVien.csv"}
+                  >
+                    Export as CSV
+                  </CSVLink>
                 }
               </MenuItem>
               <MenuItem onClick={exportPDF}>Export as PDF</MenuItem>
@@ -148,7 +152,8 @@ const OrgStructurePage = () => {
           <Paper className={classes.paper}>
             <CSidebarNav>
               <CDataTable
-                fields={defaultProfileFields}
+                //fields={defaultProfileFields}
+                fields={[]}
                 items={ListProfile}
                 pagination={ListProfile.length > 15 ? true : false}
                 itemsPerPage={15}

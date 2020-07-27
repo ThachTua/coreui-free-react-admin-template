@@ -7,12 +7,12 @@ import {
   LinearProgress,
 } from "@material-ui/core";
 
-import TreeView from "@material-ui/lab/TreeView";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
+//import TreeView from "@material-ui/lab/TreeView";
+// import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+// import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+// import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+// import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+// import AccountTreeIcon from "@material-ui/icons/AccountTree";
 
 import StyledTreeItem from "./StyledTreeItem";
 
@@ -38,7 +38,8 @@ const OrgStructureTree = (props) => {
         key={nodes.data.ID}
         nodeId={nodes.data.ID}
         labelText={`${nodes.data.Code}-${nodes.data.OrgStructureName}`}
-        labelIcon={nodes.children ? PeopleAltIcon : PersonOutlineIcon}
+        //labelIcon={nodes.children ? PeopleAltIcon : PersonOutlineIcon}
+        labelIcon={nodes.children ? "abc" : "abc"}
         color="#a250f5"
         bgColor="#f3e8fd"
         labelInfo="100"
@@ -49,31 +50,30 @@ const OrgStructureTree = (props) => {
       </StyledTreeItem>
     );
 
-  return (
-    <TreeView
-      className={classes.root}
-      defaultEndIcon={<div style={{ width: 24 }} />}
-      defaultCollapseIcon={<ArrowDropDownIcon />}
-      defaultExpandIcon={<ArrowRightIcon />}
-      selected={[!OrgStructureSelected ? null : OrgStructureSelected]}
-      onNodeSelect={(event, item) => {
-        setOrgStructureSelected(item);
-      }}
-    >
-      <Button
-        variant="outlined"
-        startIcon={<AccountTreeIcon color="action" />}
-        disabled
-        fullWidth
-      >
-        <Typography align="left" variant="h6" color="textPrimary">
-          Sơ đồ tổ chức
-        </Typography>
-      </Button>
+  return <div>abc</div>;
 
-      {renderTree(StructureTree)}
-    </TreeView>
-  );
+  // <TreeView
+  //   className={classes.root}
+  //   defaultEndIcon={<div style={{ width: 24 }} />}
+  //   //defaultCollapseIcon={<ArrowDropDownIcon />}
+  //   //defaultExpandIcon={<ArrowRightIcon />}
+  //   selected={[!OrgStructureSelected ? null : OrgStructureSelected]}
+  //   onNodeSelect={(event, item) => {
+  //     setOrgStructureSelected(item);
+  //   }}
+  // >
+  //   <Button
+  //     variant="outlined"
+  //     // startIcon={<AccountTreeIcon color="action" />}
+  //     disabled
+  //     fullWidth
+  //   >
+  //     <Typography align="left" variant="h6" color="textPrimary">
+  //       Sơ đồ tổ chức
+  //     </Typography>
+  //   </Button>
+  //   {renderTree(StructureTree)}
+  // </TreeView>
 };
 
 export default OrgStructureTree;

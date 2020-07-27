@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
-import TreeItem from "@material-ui/lab/TreeItem";
+//import TreeItem from "@material-ui/lab/TreeItem";
 import Typography from "@material-ui/core/Typography";
 
 const useTreeItemStyles = makeStyles((theme) => ({
@@ -65,34 +65,35 @@ const StyledTreeItem = (props) => {
     ...other
   } = props;
 
-  return (
-    <TreeItem
-      label={
-        <div className={classes.labelRoot}>
-          <LabelIcon color="inherit" className={classes.labelIcon} />
-          <Typography variant="body2" className={classes.labelText}>
-            {labelText}
-          </Typography>
-          <Typography variant="caption" color="inherit">
-            {labelInfo}
-          </Typography>
-        </div>
-      }
-      style={{
-        "--tree-view-color": color,
-        "--tree-view-bg-color": bgColor,
-      }}
-      classes={{
-        root: classes.root,
-        content: classes.content,
-        expanded: classes.expanded,
-        selected: classes.selected,
-        group: classes.group,
-        label: classes.label,
-      }}
-      {...other}
-    />
-  );
+  return <div>HAHAH</div>;
+  // return (
+  //   <TreeItem
+  //     label={
+  //       <div className={classes.labelRoot}>
+  //         <LabelIcon color="inherit" className={classes.labelIcon} />
+  //         <Typography variant="body2" className={classes.labelText}>
+  //           {labelText}
+  //         </Typography>
+  //         <Typography variant="caption" color="inherit">
+  //           {labelInfo}
+  //         </Typography>
+  //       </div>
+  //     }
+  //     style={{
+  //       "--tree-view-color": color,
+  //       "--tree-view-bg-color": bgColor,
+  //     }}
+  //     classes={{
+  //       root: classes.root,
+  //       content: classes.content,
+  //       expanded: classes.expanded,
+  //       selected: classes.selected,
+  //       group: classes.group,
+  //       label: classes.label,
+  //     }}
+  //     {...other}
+  //   />
+  // );
 };
 
 StyledTreeItem.propTypes = {
