@@ -13,7 +13,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 import SaveAltIcon from "@material-ui/icons/SaveAlt";
 
-import { CSVLink } from "react-csv";
+//import { CSVLink } from "react-csv";
 
 import TheSidebar from "./TheSidebar";
 
@@ -130,13 +130,15 @@ const OrgStructurePage = () => {
                   exportPDF();
                 }}
               >
-                <CSVLink
-                  data={ListProfile}
-                  headers={defaultProfileFields}
-                  filename={"DSNhanVien.csv"}
-                >
-                  Export as CSV
-                </CSVLink>
+                {
+                  // <CSVLink
+                  //   data={ListProfile}
+                  //   headers={defaultProfileFields}
+                  //   filename={"DSNhanVien.csv"}
+                  // >
+                  // Export as CSV
+                  // </CSVLink>
+                }
               </MenuItem>
               <MenuItem onClick={exportPDF}>Export as PDF</MenuItem>
             </Menu>
